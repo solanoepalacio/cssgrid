@@ -1,0 +1,193 @@
+/* colors */
+:root {
+  --purple-100: #5b1a88;
+  --purple-200: #7021a6;
+  --grey-100: rgb(50,50,50);
+  --grey-200: rgb(240,240,240) ;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.inline-grid {
+  display: inline-grid;
+}
+
+.grid {
+  display: grid;
+}
+
+.main {
+  width: 100%;
+  grid-template-columns: repeat(8, 12.5% [col]);
+  grid-template-rows: [top] 1px repeat(3, auto [section]) [fourth] 540px [bottom] 30px;
+  grid-template-areas:
+    ". . . . . . . ."
+    ". first first first first first first ."
+    ". . second second second second . ."
+    ". third third third third third third ."
+    "fourth fourth fourth fourth fourth fourth fourth fourth"
+    ". . . . . . . .";
+
+  grid-row-gap: 4.5em;
+}
+
+.first {
+  grid-area: first;
+  text-align: center;
+}
+
+.first>h1 {
+  font-size: 2.5em;
+  font-weight: 600;
+  color: var(--purple-100)
+}
+
+.first>p {
+  font-size: 1.2em;
+  color: var(--purple-200)
+}
+
+.second {
+  grid-area: second;
+  text-align: center;
+  color: var(--purple-100)
+}
+
+.second>.grid {
+  grid-template-columns: repeat(3, 1fr [col]);
+  grid-template-rows: [header] 60px repeat(2, auto [citys]);
+  grid-template-areas:
+    "header header header"
+    ". . ."
+    ". . .";
+  grid-auto-flow: row;
+  grid-gap: 2.5em;
+}
+
+.second>.grid>h2 {
+  grid-area: header;
+}
+
+
+.second .header {
+  color: var(--purple-100)
+}
+.city>h3 {
+  color: var(--purple-200)
+}
+
+.third {
+  grid-area: third;
+}
+
+.third>.grid {
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 2.5em;
+  grid-template-areas: 
+    ". . . . ."
+    ". contact contact contact ."
+}
+
+.step>.image {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.step {
+  text-align: center;
+  color: var(--purple-100)
+}
+
+.step>.label {
+  padding: 1em 0;
+}
+
+.step h3 {
+  margin: 0;
+}
+
+.step p {
+  color: var(--grey-100)
+}
+
+.contact {
+  grid-area: contact;
+  font-variant: small-caps;
+  padding: 2.5em 0;
+}
+
+.contact>input,span {
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+}
+
+.contact>input {
+  width: 66%;
+  outline: none;
+  border: none;
+  background-color: var(--grey-200);
+  padding-left: 0.6em;
+}
+
+.contact>span {
+  width: 33%;
+  text-align: center;
+  display: inline-block;
+  background-color: var(--purple-200);
+  border-radius: 8px;
+  color: white;
+}
+.contact>span:hover {
+  cursor: pointer;
+}
+
+.fourth {
+  grid-area: fourth;
+  background: url(images/referral.png);
+  background-size: cover;
+}
+
+.fourth.grid {
+  grid-template-columns: 25% 50% 25%;
+  grid-template-rows: 100%;
+  grid-template-areas: '. text .';
+}
+
+.fourth>.text {
+  grid-area: text;
+  color: white;
+  text-align: center;
+  align-self: center;
+}
+
+.text>h3 {
+  font-size: 3em;
+  font-weight: 900;
+  margin: 0;
+  margin-top: 2em;
+}
+
+.text>h4 {
+  font-size: 20px;
+}
+
+.text>span {
+  background-color: white;
+  color: var(--purple-200);
+  font-variant: small-caps;
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+}
+
+.text>span:hover {
+  cursor: pointer;
+}
